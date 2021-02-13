@@ -93,7 +93,7 @@ class TreeAnc(object):
            Ignore gaps in branch length calculations
 
         convert_upper : bool, optional
-            Description
+            Convert all sequences to upper case
 
         seq_multiplicity : dict
            If individual nodes in the tree correspond to multiple sampled sequences
@@ -102,11 +102,11 @@ class TreeAnc(object):
            can be used to weigh individual tips by abundance or important during root search.
 
         compress : bool, optional
-            reduce identical alignment columns to one (not useful when
+            Reduce identical alignment columns to one (not useful when
             inferring site specific GTR models).
 
         seq_len : int, optional
-            length of the sequence. this is inferred from the input alignment or the reference
+            Length of the sequence. This is inferred from the input alignment or the reference
             sequence in most cases but can be specified for other applications.
 
         **kwargs
@@ -173,7 +173,7 @@ class TreeAnc(object):
             String to print on the screen
 
          level : int
-            Log-level. Only the messages with a level higher than the
+            Log-level. Only the messages with a level below the
             current verbose level will be shown.
 
          warn : bool
@@ -335,7 +335,7 @@ class TreeAnc(object):
         Returns
         -------
         float
-            inverse of the uncompressed sequene length - length scale for short branches
+            inverse of the uncompressed sequence length - length scale for short branches
         """
         return 1.0/self.data.full_length if self.data.full_length else np.nan
 
